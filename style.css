@@ -932,50 +932,44 @@ main {
 
 .grid-tarjetas {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 15px;
-  width: 100%;
-  max-width: 500px;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 18px;
+  width: 95%;
+  max-width: 520px;
   margin: 30px auto;
-  justify-content: center;
 }
 
 .tarjeta-contenedor {
   position: relative;
   width: 100%;
-  aspect-ratio: 1 / 1;
+  min-height: 190px;
   background: var(--blanco-elegante);
-  border-radius: 12px;
+  border-radius: 14px;
   overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   box-sizing: border-box;
   border: 2px solid var(--plateado);
+  display: flex;
 }
 
 .secreto {
   color: var(--azul-rey);
-  font-weight: bold;
+  font-weight: 600;
   text-align: center;
   font-family: "Montserrat", sans-serif;
-  line-height: 1.2;
-  padding: 10%; /* Padding porcentual para que escale con el cuadro */
+  line-height: 1.5;
+  padding: 20px;
   width: 100%;
-  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
-  /* Esta es la clave: el texto escala según el ancho del contenedor, no de la pantalla */
-  font-size: clamp(10px, 4.5cqw, 15px);
-  container-type: inline-size; /* Permite que el texto sepa cuánto mide su padre directo */
+  font-size: clamp(13px, 3vw, 16px);
+  overflow-wrap: break-word;
 }
 
 .canvas-raspar {
   position: absolute;
-  top: 0;
-  left: 0;
+  inset: 0;
   width: 100%;
   height: 100%;
   z-index: 2;
